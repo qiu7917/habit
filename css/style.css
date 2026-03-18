@@ -83,6 +83,7 @@ li {
 .accordion-item .accordion-content {
   display: none;
   overflow: hidden;
+  cursor: pointer;
 }
 .accordion-item .accordion-content .sec10-item-open {
   position: relative;

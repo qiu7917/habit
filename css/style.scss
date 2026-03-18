@@ -101,6 +101,8 @@ li {
     .accordion-content {
         display: none;
         overflow: hidden;
+        cursor: pointer;
+
 
         .sec10-item-open {
             position: relative;
