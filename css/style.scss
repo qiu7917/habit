@@ -1,0 +1,304 @@
+@charset "UTF-8";
+@use 'mixin' as m;
+
+body {
+    font-size: 100%;
+    color: #333333;
+    height: 100%;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    overflow-x: hidden;
+    background-color: #F0F0F0;
+}
+
+img {
+    vertical-align: bottom;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #333333;
+    display: inline-block;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 550px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #ffffff;
+
+    @include m.tab {
+        max-width: 768px;
+    }
+}
+
+.sec-cta {
+    position: relative;
+
+    .cta {
+        position: absolute;
+        top: 64%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0 30px;
+        width: 100%;
+
+        @include m.sp {
+            padding: 0 20px;
+
+        }
+
+        img {
+            width: 100%;
+            filter: drop-shadow(3px 3px 2px rgb(51, 51, 51, 1.0));
+        }
+    }
+
+    &.sec06 {
+        .cta {
+            top: 84%;
+
+            img {
+                filter: drop-shadow(3px 3px 2px rgb(211, 211, 211, 1.0));
+            }
+        }
+    }
+
+    &.sec10 {
+        .cta {
+            top: 70%;
+        }
+    }
+}
+
+
+.accordion-item {
+    width: 100%;
+
+    .accordion-header {
+        cursor: pointer;
+
+        .btn-opened {
+            display: none;
+        }
+
+        .btn-closed {
+            display: block;
+        }
+
+        &.is-active {
+            .btn-opened {
+                display: block;
+            }
+
+            .btn-closed {
+                display: none;
+            }
+        }
+    }
+
+    .accordion-content {
+        display: none;
+        overflow: hidden;
+
+        .sec10-item-open {
+            position: relative;
+            width: 100%;
+
+            img {
+                width: 100%;
+                display: block;
+            }
+
+            iframe {
+                position: absolute;
+                bottom: 5%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: calc(100% - 70px);
+                max-width: 440px;
+                aspect-ratio: 28 / 15;
+                height: auto;
+                border: none;
+
+                @include m.tab {
+                    max-width: 658px;
+                    max-height: 353px;
+                }
+            }
+        }
+    }
+}
+
+
+
+.sec01 {}
+
+.sec02 {}
+
+.sec03 {}
+
+.sec04 {}
+
+.sec05 {
+    background-color: #3e4d54;
+
+    .slick {
+        padding: 0 35px;
+
+        .slider {
+
+            .slide {}
+
+            .prev-arrow {
+                height: 15px;
+                width: 15px;
+                border-bottom: 2px solid #e6877f;
+                border-left: 2px solid #e6877f;
+                position: absolute;
+                top: 30%;
+                left: -10px;
+
+                transform: translateY(-50%) rotate(45deg);
+                z-index: 10;
+                cursor: pointer;
+            }
+
+            .next-arrow {
+                height: 15px;
+                width: 15px;
+                border-bottom: 2px solid #e6877f;
+                border-left: 2px solid #e6877f;
+                position: absolute;
+                top: 30%;
+                right: -10px;
+                transform: translateY(-50%) rotate(225deg);
+                z-index: 10;
+                cursor: pointer;
+            }
+
+            .slick-dots {
+                bottom: -20px;
+
+                li {
+                    margin: 0 10px;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+
+                    button {
+                        &::before {
+                            content: '';
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+                            background: #999999;
+                            opacity: 1;
+                        }
+                    }
+
+                    &.slick-active {
+                        button {
+                            &::before {
+                                content: '';
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background: #e6877f;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+
+                .slick-active {
+                    &::before {
+                        content: '';
+                        width: 50px;
+                        height: 5px;
+                        background: #333;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.sec06 {}
+
+.sec07 {
+    background-color: #3e4d54;
+
+    .sec07-studio {
+        padding: 0 15px 54px 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .sec07-item {
+            .accordion-content {
+                .sec07-item-open {
+                    position: relative;
+
+                    iframe {
+                        position: absolute;
+                        bottom: 5%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: calc(100% - 50px);
+                        aspect-ratio: 310 / 143;
+                        height: auto;
+                        border: none;
+
+                        @include m.tab {
+                            width: calc(100% - 90px);
+                        }
+
+                        @include m.sp {
+                            width: calc(100% - 50px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sec08 {}
+
+.sec09 {}
+
+.sec10 {}
+
+
+footer {
+    .container {
+        .fixedbtn {
+            background-color: #ffffff;
+            position: fixed;
+            z-index: 100;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 550px;
+            width: 100%;
+
+            @include m.tab {
+                max-width: 768px;
+            }
+        }
+    }
+}
